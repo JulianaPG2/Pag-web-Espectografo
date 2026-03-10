@@ -51,6 +51,8 @@ Serial.println("Sensor listo");
 
 void loop(){}
 
+//SERVIDOR WEB
+
 void initWebServer(){
 
 server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){
@@ -98,6 +100,8 @@ server.begin();
 
 }
 
+//LECTURA DEL SENSOR
+
 void takeMeasurements(){
 
 File file = SD.open("/data.csv", FILE_APPEND);
@@ -141,6 +145,8 @@ delay(1000);
 file.close();
 
 }
+
+// INTERFAZ WEB
 
 const char index_html[] PROGMEM = R"rawliteral(
 
